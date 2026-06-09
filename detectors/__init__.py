@@ -1,0 +1,3 @@
+"""
+Detectors package for Steganography
+"""
