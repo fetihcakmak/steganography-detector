@@ -1,0 +1,3 @@
+# Stdlib only
+# Python 3.8+
+# struct, math, collections, os, sys, argparse — all built-in
