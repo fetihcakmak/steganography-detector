@@ -43,7 +43,15 @@ main.py
 
 ---
 
-## ⚡ Kullanım
+## ⚡ Kurulum
+
+```bash
+git clone https://github.com/fetihcakmak/steganography-detector.git
+cd steganography-detector
+python main.py --demo   # Ek bağımlılık gerekmez (yalnızca stdlib)
+```
+
+## 🚀 Kullanım
 
 ```bash
 # Demo modu (simüle edilmiş analizler)
@@ -53,6 +61,29 @@ python main.py --demo
 python main.py --scan gizli_resim.jpg
 python main.py --scan raw_image.bmp
 ```
+
+## 🖥️ Örnek Çıktı
+
+```
+1. Sahte bir JPG EOF analizi simüle ediliyor...
+  [!] UYARI: FF D9'dan sonra 450 bayt gizli veri tespit edildi!
+  Önizleme: 'Secret message goes here...'
+
+2. İstatistiksel Analiz (Chi-Square) simüle ediliyor...
+  Shannon Entropisi: 7.98 (Çok yüksek, şifrelenmiş veri şüphesi)
+  Ortalama Chi-Square: 145.2 (Uniform dağılıma yakın - LSB stego şüphesi)
+
+3. BMP LSB Analizi simüle ediliyor...
+  [!] Olası metin bulundu: 'flag{st3g0_1s_aw3s0m3}'
+```
+
+## ⚠️ Sınırlamalar
+
+Bu araç yalnızca JPG/PNG EOF-sonrası veri ve sıkıştırılmamış BMP'lerdeki LSB manipülasyonunu tespit eder; F5, OutGuess gibi sofistike/şifreli steganografi algoritmalarını veya sıkıştırılmış PNG'lerdeki gerçek LSB gömme işlemini kapsamaz. Adli/forensik bir vakada kesin sonuç için uzman araçlarla (StegExpose, zsteg, binwalk vb.) çapraz doğrulama yapılmalıdır.
+
+## 📄 Lisans
+
+Bu depo şu an bir lisans dosyası içermiyor. Kullanım koşulları için proje sahibiyle iletişime geçin.
 
 ---
 
